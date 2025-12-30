@@ -18,7 +18,7 @@ func _ready() -> void:
 	swipe_card.card_off_screen.connect(_on_card_off_screen)
 
 func _on_swipe_started() -> void:
-	print("Swipe started!")
+	print("Swipe started")
 	direction_label.text = "Direction: Dragging..."
 
 func _on_swiping(direction: String, progress: float) -> void:
@@ -27,12 +27,12 @@ func _on_swiping(direction: String, progress: float) -> void:
 
 func _on_hold_threshold_reached(direction: String) -> void:
 	print("Hold threshold reached: ", direction)
-	direction_label.text = "Direction: " + direction.capitalize() + " (READY!)"
+	direction_label.text = "Direction: " + direction.capitalize() + " (READY)"
 	progress_label.text = "Progress: 100%+"
 
 func _on_swiped(direction: String) -> void:
 	print("SWIPED: ", direction)
-	direction_label.text = "SWIPED: " + direction.capitalize() + "!"
+	direction_label.text = "SWIPED: " + direction.capitalize()
 
 func _on_swipe_canceled() -> void:
 	print("Swipe canceled")
@@ -45,7 +45,7 @@ func _on_returned_to_center() -> void:
 	progress_label.text = "Progress: 0%"
 
 func _on_card_off_screen() -> void:
-	print("Card flew off screen!")
+	print("Card flew off screen")
 	# Respawn the card after a delay
 	await get_tree().create_timer(0.5).timeout
 	swipe_card.reset_position()
