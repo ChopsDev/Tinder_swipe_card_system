@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3hyct3h0r8p6"]
+
+[ext_resource type="PackedScene" uid="uid://c7j5j1ww42h1v" path="res://addons/swipe_card_system/core/swipe_card.tscn" id="1_swipe_card"]
+[ext_resource type="Script" uid="uid://dnji1g78uw47g" path="res://addons/swipe_card_system/examples/demo/demo.gd" id="2_demo"]
+
+[node name="Demo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_demo")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.12, 0.12, 0.15, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SwipeCard" parent="CenterContainer" instance=ExtResource("1_swipe_card")]
+layout_mode = 2
+
+[node name="DirectionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -80.0
+offset_right = 100.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Direction: None"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -40.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Progress: 0%"
+horizontal_alignment = 1
+vertical_alignment = 1

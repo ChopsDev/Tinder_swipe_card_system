@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7j5j1ww42h1v"]
+
+[ext_resource type="Script" uid="uid://bqxsjqe005yvt" path="res://addons/swipe_card_system/core/swipe_card.gd" id="1_swipe_card"]
+[ext_resource type="Script" uid="uid://w75a7i1slmsl" path="res://addons/swipe_card_system/state_machine/swipe_state_machine.gd" id="2_state_machine"]
+[ext_resource type="Script" uid="uid://7xu26j015p3q" path="res://addons/swipe_card_system/state_machine/states/idle_state.gd" id="3_idle"]
+[ext_resource type="Script" uid="uid://drag3f231v4i6" path="res://addons/swipe_card_system/state_machine/states/held_state.gd" id="4_held"]
+[ext_resource type="Script" uid="uid://btgqijk3ubb5f" path="res://addons/swipe_card_system/state_machine/states/returning_state.gd" id="5_returning"]
+[ext_resource type="Script" uid="uid://lrslrof13c0n" path="res://addons/swipe_card_system/state_machine/states/swiped_state.gd" id="6_swiped"]
+
+[node name="SwipeCard" type="Control"]
+custom_minimum_size = Vector2(300, 400)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 300.0
+offset_bottom = 400.0
+script = ExtResource("1_swipe_card")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="CardContent" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="CardContent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.2, 0.2, 0.25, 1)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_state_machine")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_idle")
+
+[node name="Held" type="Node" parent="StateMachine"]
+script = ExtResource("4_held")
+
+[node name="Returning" type="Node" parent="StateMachine"]
+script = ExtResource("5_returning")
+
+[node name="Swiped" type="Node" parent="StateMachine"]
+script = ExtResource("6_swiped")
