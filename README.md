@@ -9,7 +9,7 @@ Swipe detection in 4 directions, spring physics for that satisfying snap-back, h
 ## Setup
 
 1. Drop the `addons/swipe_card_system` folder into your project
-2. Enable the plugin if you want (Project Settings → Plugins)
+2. Enable the plugin if you want (Project Settings > Plugins)
 3. Instance `SwipeCard.tscn` wherever you need it
 
 ## Basic usage
@@ -95,3 +95,4 @@ Check out `addons/swipe_card_system/examples/demo/demo.tscn` to see it working.
 ## License
 
 MIT - do whatever you want with it.
+
