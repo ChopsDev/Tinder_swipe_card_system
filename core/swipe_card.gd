@@ -1,10 +1,9 @@
 # SwipeCard - A modular, Tinder-style swipe card component
 # Drop this into any scene and connect to signals for swipe events
 #
-# Usage:
-#   1. Add SwipeCard.tscn to your scene (or instantiate SwipeCard script on a Control)
-#   2. Add your content as a child of the SwipeCard
-#   3. Connect to signals: swiped, swiping, hold_threshold_reached, etc.
+# 1) Add SwipeCard.tscn to your scene (or instantiate SwipeCard script on a Control)
+# 2) Add your content as a child of the SwipeCard
+# 3) Connect to signals: swiped, swiping, hold_threshold_reached, etc.
 #
 # Example:
 #   $SwipeCard.swiped.connect(func(dir): print("Swiped: ", dir))
@@ -12,9 +11,7 @@
 extends Control
 class_name SwipeCard
 
-# ============================================================
-# SIGNALS - Connect to these to respond to swipe events
-# ============================================================
+## SIGNALS - Connect to these to respond to swipe events
 
 ## Emitted when the user starts dragging the card
 signal swipe_started()
@@ -41,9 +38,7 @@ signal returned_to_center()
 ## Emitted when the card flies off-screen after a swipe
 signal card_off_screen()
 
-# ============================================================
-# CONFIGURATION - Tweak these in the inspector
-# ============================================================
+## CONFIGURATION - Tweak these in the inspector
 
 @export_group("Swipe Behavior")
 ## Distance in pixels required to trigger a swipe
