@@ -96,3 +96,7 @@ Check out `addons/swipe_card_system/examples/demo/demo.tscn` to see it working.
 
 MIT - do whatever you want with it.
 
+## 🤖 AI Disclosure
+The foundational architecture and core logic of this system were designed and built manually. Generative AI (**[Tinder_swipe_card_system]**) was subsequently used to refactor the codebase into modular components, expand usability features, and assist with documentation. All AI-generated code was thoroughly reviewed, tested, and integrated by the author.
+
+
